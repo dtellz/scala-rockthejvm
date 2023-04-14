@@ -54,4 +54,26 @@ object Expressions extends App {
   }
 
   println(aCodeBlock)
+
+  // EXERCISES:
+  // 1. Whats the difference between "hello world" vs println("hello world")
+  //    The first evaluates to a string and the later to a Unit (side effect).
+
+  // 2. Whats the value on "someValue"?
+
+  val someValue = {
+    2 < 3
+  }
+
+  //   true
+
+  // 3. Whats the value of "someOtherValue"?
+  val someOtherValue = {
+    if(someValue) 239 else 986
+    42
+  }
+
+  //  42
+
+  println(someValue, someOtherValue)
 }
