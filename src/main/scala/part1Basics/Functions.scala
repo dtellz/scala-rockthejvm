@@ -59,5 +59,18 @@ object Functions extends App {
 
   // 3:
 
+  def fibonacci(n: Int): Int =
+    if (n == 0) 0
+    else if (n == 1) 1
+    else if (n > 1) fibonacci(n-1) + fibonacci(n-2)
+    else -1 * fibonacci(-n)
 
+  println(fibonacci(18))
+
+  // 4:
+  def isPrime(n: Int): Boolean =
+    if(n <=1 ) false
+    else !(2 to math.sqrt(n).toInt).exists(i => n % i == 0)
+
+  println(isPrime(4))
 }
