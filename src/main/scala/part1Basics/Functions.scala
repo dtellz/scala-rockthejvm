@@ -46,13 +46,8 @@ object Functions extends App {
 
   var prevValue = 1
   def aFactorialFunction(n: Int): Int = {
-    println(s"called $prevValue")
-    if (n == 1) prevValue
-    else {
-      prevValue *= n
-      println(s"computed $prevValue")
-      aFactorialFunction(n - 1)
-    }
+    if (n <= 0) 1
+    else n * aFactorialFunction(n-1)
   }
 
   println(aFactorialFunction(4))
