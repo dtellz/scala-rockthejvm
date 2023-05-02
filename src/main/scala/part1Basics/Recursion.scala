@@ -73,4 +73,13 @@ object Recursion extends App {
 
   println(fibonacci(8))
 
+  def processNum(x: Int, y: Int): Int = {
+    val num1 = x * 2
+    val num2 = y * 3
+    if (num1 > 10) return y
+    num1 + num2
+  }
+
+  println(processNum(3, 3))
+
 }
