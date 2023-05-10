@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://docs.scala-lang.org/">
-    <img alt="stuart logo" src="./scala.png" width="300">
+    <img alt="stuart logo" src="./scala-ts.png" width="300">
   </a>
 </p>
 
