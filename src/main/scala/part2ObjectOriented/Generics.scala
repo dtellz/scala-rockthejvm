@@ -51,7 +51,7 @@ object Generics extends App {
   val cage = new Cage(new Dog) // Accepts Dog because its an instance of Animal
 
   class Car
-  val newCar = new Cage(new Car) // Will break
+  // val newCar = new Cage(new Car) // Will break
 
   // EXERCISE -> Expand MyList to be generic
 
