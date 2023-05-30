@@ -1,7 +1,7 @@
 package part2ObjectOriented
 
 
-abstract class MyList {
+abstract class MyList[+A] {
   /*
         head = first element of the list
         tail = remainder of the list
@@ -9,30 +9,30 @@ abstract class MyList {
         add(int) => new list with this element added
         toString => a string representation of the list
      */
-  def head: Int
-  def tail: MyList
+  def head: A
+  def tail: MyList[A]
   def isEmpty: Boolean
-  def add(element: Int): MyList
+  def add(element: Int): MyList[A]
   def printElements: String
   // Polymorphic call
   override def toString: String = "["+ printElements + "]"
 }
 
-class Cons(h: Int, t: MyList) extends MyList {
+class Cons(h: Int, t: MyList[Int]) extends MyList[Int]{
   def head: Int = h
-  def tail: MyList = t
+  def tail: MyList[Int] = t
   def isEmpty: Boolean = false
-  def add(element: Int): MyList = new Cons(element, this)
+  def add(element: Int): MyList[Int] = new Cons(element, this)
   def printElements: String =
     if(t.isEmpty) "" + h
     else h + " " + t.printElements
 }
 
-object Empty extends MyList {
+object Empty extends MyList[Int] {
   def head: Int = throw new NoSuchElementException
-  def tail: MyList = throw new NoSuchElementException
+  def tail: MyList[Int] = throw new NoSuchElementException
   def isEmpty: Boolean = true
-  def add(element: Int): MyList = new Cons(element, Empty)
+  def add(element: Int): MyList[Int] = new Cons(element, Empty)
   def printElements: String = ""
 }
 
